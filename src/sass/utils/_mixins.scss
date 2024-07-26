@@ -26,18 +26,11 @@
 }
 
 @mixin mq($range) {
-  $mob: 480px;
-  $tab: 768px;
-  $desk: 1280px;
+  $mob: 375px;
+  $desk: 1440px;
 
   @if $range==mob {
     @media screen and (min-width: $mob) {
-      @content;
-    }
-  }
-
-  @if $range==tab {
-    @media screen and (min-width: $tab) {
       @content;
     }
   }
@@ -50,12 +43,6 @@
 
   @if $range==noDesk {
     @media (max-width:#{$desk - 0.02}) {
-      @content;
-    }
-  }
-
-  @if $range==tab-only {
-    @media (min-width:$tab) and (max-width:#{$desk - 0.02}) {
       @content;
     }
   }
