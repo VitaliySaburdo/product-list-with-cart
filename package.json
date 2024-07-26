@@ -20,6 +20,7 @@
     "vite": "^5.3.4"
   },
   "dependencies": {
+    "modern-normalize": "^2.0.0",
     "posthtml-include": "^2.0.1"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead"
