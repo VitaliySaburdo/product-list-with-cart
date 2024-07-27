@@ -4,7 +4,6 @@
 }
 
 .product-list {
-  position: relative;
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -21,16 +20,20 @@
   margin-bottom: 40px;
 }
 .product-list__button {
-  position: absolute;
+  position: relative;
+  z-index: 100;
+  margin-top: -60px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 20px;
   @include centered-flex();
   gap: 10px;
-  top: 195px;
-  left: 85px;
   height: 40px;
   width: 160px;
   @include fonts(12, 600);
   border-radius: 30px;
   border: 1px solid var(--rose-900);
+  background-color: var(--rose-50);
 }
 .product-list__category {
   @include fonts(12, 400);
