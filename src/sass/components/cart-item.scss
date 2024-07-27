@@ -1,11 +1,17 @@
 .section__title {
   padding-top: 30px;
   padding-bottom: 40px;
+  @include mq(desk) {
+    padding-top: 0;
+  }
 }
 
-.main__container {
+.product__container {
+  margin-left: auto;
+  margin-right: auto;
   @include mq(desk) {
     display: flex;
+    gap: 30px;
   }
 }
 
@@ -18,6 +24,7 @@
     max-width: 800px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    height: auto;
   }
 }
 
@@ -61,6 +68,11 @@
 .cart__container {
   padding: 30px 20px;
   background-color: var(--wite);
+  border-radius: 10px;
+  @include mq(desk) {
+    flex: 1;
+    align-self: flex-start;
+  }
 }
 .cart__title {
   @include fonts(20, 700);

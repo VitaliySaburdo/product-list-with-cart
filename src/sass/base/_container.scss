@@ -7,7 +7,9 @@
 
   @include mq(desk) {
     width: 1440px;
-    padding-left: 32px;
-    padding-right: 32px;
+    padding-left: 110px;
+    padding-right: 110px;
+    padding-top: 100px;
+    padding-bottom: 90px;
   }
 }
