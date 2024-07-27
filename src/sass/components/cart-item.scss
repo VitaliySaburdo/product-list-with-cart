@@ -7,14 +7,17 @@
   display: flex;
   flex-direction: column;
   gap: 25px;
+  margin-bottom: 35px;
 }
 
 // .product-list__container {
+//   margin-bottom: 35px;
 // }
 // .product-list__item {
 //   border-radius: 10px;
 //   overflow: hidden;
 // }
+
 .product-list__image {
   border-radius: 10px;
   margin-bottom: 40px;
@@ -48,6 +51,27 @@
   margin-bottom: 14px;
 }
 .product-list__price {
-  @include fonts(18, 600);
+  @include fonts(18, 400);
   color: var(--red);
+}
+
+.cart__container {
+  padding: 30px 20px;
+  background-color: var(--wite);
+}
+.cart__title {
+  @include fonts(20, 700);
+  color: var(--red);
+  margin-bottom: 50px;
+}
+.cart__image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+}
+.cart__text {
+  @include fonts(12, 600);
+  color: var(--rose-400);
+  text-align: center;
 }
