@@ -3,20 +3,23 @@
   padding-bottom: 40px;
 }
 
+.main__container {
+  @include mq(desk) {
+    display: flex;
+  }
+}
+
 .product-list {
   display: flex;
   flex-direction: column;
   gap: 25px;
   margin-bottom: 35px;
+  @include mq(desk) {
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
-
-// .product-list__container {
-//   margin-bottom: 35px;
-// }
-// .product-list__item {
-//   border-radius: 10px;
-//   overflow: hidden;
-// }
 
 .product-list__image {
   border-radius: 10px;
