@@ -63,6 +63,9 @@ function onBtn(event) {
 const orders = [];
 
 function renderTotalOrder(id, quantity) {
+  const cartList = document.querySelector('.cart__list');
+  const cartQuantity = document.querySelector('.cart__title');
+
   const order = {
     id: id,
     name: data[id].name,
@@ -70,6 +73,7 @@ function renderTotalOrder(id, quantity) {
     price: data[id].price,
     totalPrice: quantity * data[id].price,
   };
+  console.log(order);
 
   const existingOrderIndex = orders.findIndex(o => o.id === id);
 
@@ -80,5 +84,16 @@ function renderTotalOrder(id, quantity) {
     orders.push(order);
   }
 
-  console.log(orders);
+  const totalQuantity = orders.reduce((acc, item) => (acc += item.quantity), 0);
+
+  cartQuantity.textContent = `Your Cart (${totalQuantity})`;
+
+  const markupCart = orders
+    .map(order => {
+      return `
+      <p>${order.name}</p>`;
+    })
+    .join('');
+
+  cartList.innerHTML = markupCart;
 }
