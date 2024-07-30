@@ -43,8 +43,7 @@ list.addEventListener('click', onBtn);
 
 function onBtn(event) {
   const target = event.target;
-
-  let quantity = 1;
+  let quantity = 0;
 
   if (target.closest('.product-list__button')) {
     const button = target.closest('.product-list__button');
@@ -64,5 +63,19 @@ function onBtn(event) {
                 <span class="btn__icon">+</span>
               </button>
     `;
+
+    const decrement = document.querySelector('.product__button--decrement');
+    const increment = document.querySelector('.product__button--increment');
+    const quantityDisplay = button.querySelector('.product__quantity');
+
+    decrement.addEventListener('click', () => {
+      quantity -= 1;
+      quantityDisplay.textContent = quantity;
+    });
+    increment.addEventListener('click', () => {
+      quantity += 1;
+      quantityDisplay.textContent = quantity;
+    });
+    console.log(quantity);
   }
 }
