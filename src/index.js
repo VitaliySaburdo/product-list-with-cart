@@ -47,12 +47,38 @@ function onBtn(event) {
       if (quantities[cardId] > 0) {
         quantities[cardId] -= 1;
         quantityDisplay.textContent = quantities[cardId];
+        renderTotalOrder(cardId, quantities[cardId]);
       }
     });
 
     increment.addEventListener('click', () => {
       quantities[cardId] += 1;
       quantityDisplay.textContent = quantities[cardId];
+      renderTotalOrder(cardId, quantities[cardId]);
     });
+    renderTotalOrder(cardId, quantities[cardId]);
   }
+}
+
+const orders = [];
+
+function renderTotalOrder(id, quantity) {
+  const order = {
+    id: id,
+    name: data[id].name,
+    quantity: quantity,
+    price: data[id].price,
+    totalPrice: quantity * data[id].price,
+  };
+
+  const existingOrderIndex = orders.findIndex(o => o.id === id);
+
+  if (existingOrderIndex !== -1) {
+    orders[existingOrderIndex].quantity = quantity;
+    orders[existingOrderIndex].totalPrice = order.quantity * order.price;
+  } else {
+    orders.push(order);
+  }
+
+  console.log(orders);
 }
