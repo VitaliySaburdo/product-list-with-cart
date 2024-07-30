@@ -50,6 +50,9 @@
   border: 1px solid var(--rose-900);
   background-color: var(--rose-50);
   cursor: pointer;
+  &:hover {
+    border-color: var(--red);
+  }
 }
 .product-list__category {
   @include fonts(12, 400);

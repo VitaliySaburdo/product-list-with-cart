@@ -1,6 +1,7 @@
 import data from './data/data.json';
 
 const list = document.querySelector('.product-list');
+// const btn = document.querySelector('.product-list__button');
 
 renderList(data);
 
@@ -23,7 +24,7 @@ function renderList(cards) {
               width="250"
               height="210"
         />
-        <button class="product-list__button" data=${idx}>
+        <button class="product-list__button" data-id=${idx}>
           <svg width="18" height="18">
             <use href="../assets/images/sprite.svg#icon-icon-add-to-cart"></use>
           </svg>
@@ -37,4 +38,15 @@ function renderList(cards) {
     .join('');
 
   list.innerHTML = markup;
+}
+
+list.addEventListener('click', onBtn);
+
+function onBtn(event) {
+  if (event.target.nodeName !== 'BUTTON') {
+    return;
+  }
+
+  event.target.classList.add('selected');
+  console.log(event.target);
 }
