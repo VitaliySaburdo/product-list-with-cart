@@ -88,6 +88,7 @@ function renderTotalOrder(id, quantity) {
   const totalQuantity = orders.reduce((acc, item) => (acc += item.quantity), 0);
 
   cartQuantity.textContent = `Your Cart (${totalQuantity})`;
+  cartQuantity.style.marginBottom = '35px';
 
   const markupCart = orders
     .map(order => {
