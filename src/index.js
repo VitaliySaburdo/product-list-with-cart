@@ -65,6 +65,7 @@ const orders = [];
 function renderTotalOrder(id, quantity) {
   const cartList = document.querySelector('.cart__list');
   const cartQuantity = document.querySelector('.cart__title');
+  const emptyContainer = document.querySelector('.cart__container--empty');
 
   const order = {
     id: id,
@@ -95,5 +96,6 @@ function renderTotalOrder(id, quantity) {
     })
     .join('');
 
+  emptyContainer.innerHTML = '';
   cartList.innerHTML = markupCart;
 }
