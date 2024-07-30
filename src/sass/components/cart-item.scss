@@ -34,7 +34,8 @@
   margin-bottom: 40px;
 }
 
-.product-list__button {
+.product-list__button,
+.product__quantity-control {
   position: relative;
   z-index: 100;
   margin-top: -60px;
@@ -56,7 +57,26 @@
   &.selected {
     background-color: var(--red);
     border: none;
+    justify-content: space-between;
+    padding-left: 12px;
+    padding-right: 12px;
+    color: var(--rose-50);
+    cursor: auto;
   }
+}
+
+.product__button {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid var(--rose-50);
+  background-color: transparent;
+  @include centered-flex();
+}
+
+.btn__icon {
+  color: var(--rose-50);
+  cursor: pointer;
 }
 
 .product-list__category {

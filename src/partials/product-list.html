@@ -19,11 +19,21 @@
               width="250"
               height="210"
             />
-            <button class="product-list__button selected">
-              <button class="product-list__button--decrement">-</button>
-              1
-              <button class="product-list__button--increment">+</button>
-            </button>
+            <div class="product__quantity-control selected">
+              <button
+                class="product__button product__button--decrement"
+                aria-label="Decrease quantity"
+              >
+                <span class="btn__icon">-</span>
+              </button>
+              <span class="product__quantity">1</span>
+              <button
+                class="product__button product__button--increment"
+                aria-label="Increase quantity"
+              >
+                <span class="btn__icon">+</span>
+              </button>
+            </div>
             <p class="product-list__category">Waffle</p>
             <p class="product-list__name">Waffle with Berries</p>
             <p class="product-list__price">$6.50</p>
