@@ -53,7 +53,12 @@
   &:hover {
     border-color: var(--red);
   }
+  &.selected {
+    background-color: var(--red);
+    border: none;
+  }
 }
+
 .product-list__category {
   @include fonts(12, 400);
   font-size: 12px;

@@ -49,4 +49,5 @@ function onBtn(event) {
 
   event.target.classList.add('selected');
   console.log(event.target);
+  event.target.innerHTML = '';
 }
