@@ -3,10 +3,11 @@ import { renderList } from './js/renderList';
 
 const list = document.querySelector('.product-list');
 
+const quantities = {};
+
 renderList(data);
 
 list.addEventListener('click', onBtn);
-const quantities = {};
 
 function onBtn(event) {
   const target = event.target;
@@ -15,7 +16,6 @@ function onBtn(event) {
     const button = target.closest('.product-list__button');
     const cardId = button.dataset.id;
 
-    // Initialize quantity if not already set
     if (!quantities[cardId]) {
       quantities[cardId] = 1;
     }
