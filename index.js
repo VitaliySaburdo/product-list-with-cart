@@ -1,6 +1,6 @@
-import data from './data/data.json';
-import { renderList } from './js/renderList';
-import { renderTotalOrder } from './js/renderTotalOrder';
+import data from './src/data/data.json';
+import { renderList } from './src/js/renderList';
+import { renderTotalOrder } from './src/js/renderTotalOrder';
 
 const list = document.querySelector('.product-list');
 
