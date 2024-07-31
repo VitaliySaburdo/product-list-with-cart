@@ -125,3 +125,12 @@
   color: var(--rose-400);
   text-align: center;
 }
+
+.cart__item {
+  display: flex;
+}
+
+.cart__item--container {
+  display: flex;
+  flex-direction: column;
+}
