@@ -17,7 +17,7 @@ const posthtmlPlugin = () => {
 export default defineConfig({
   root: 'src',
   build: {
-    outDir: 'dist',
+    outDir: '../dist',
   },
   plugins: [posthtmlPlugin()],
   resolve: {
@@ -25,6 +25,4 @@ export default defineConfig({
       '@': resolve(__dirname, 'src'),
     },
   },
-  base: '/',
-  publicDir: 'public',
 });
