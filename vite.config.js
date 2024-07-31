@@ -2,7 +2,6 @@ import { defineConfig } from 'vite';
 import posthtml from 'posthtml';
 import include from 'posthtml-include';
 import { resolve } from 'path';
-import copy from 'rollup-plugin-copy';
 
 const posthtmlPlugin = () => {
   return {
@@ -16,18 +15,9 @@ const posthtmlPlugin = () => {
 };
 
 export default defineConfig({
-  base: '/',
   root: 'src',
   build: {
-    outDir: 'dist',
-    rollupOptions: {
-      plugins: [
-        copy({
-          targets: [{ src: 'src/assets', dest: '../dist' }],
-          hook: 'writeBundle',
-        }),
-      ],
-    },
+    outDir: '../dist',
   },
   plugins: [posthtmlPlugin()],
   resolve: {
