@@ -1,5 +1,6 @@
 import data from './data/data.json';
 import { renderList } from './js/renderList';
+import { renderTotalOrder } from './js/renderTotalOrder';
 
 const list = document.querySelector('.product-list');
 
@@ -27,7 +28,9 @@ function onBtn(event) {
         aria-label="Decrease quantity"
         data-id=${cardId}
       >
-        <span class="btn__icon">-</span>
+        <svg width="18" height="18" class="cart__image">
+            <use href="../assets/images/sprite.svg#icon-icon-carbon-neutral"></use>
+        </svg>
       </button>
       <span class="product__quantity" data-id=${cardId}>${quantities[cardId]}</span>
       <button
@@ -58,45 +61,4 @@ function onBtn(event) {
     });
     renderTotalOrder(cardId, quantities[cardId]);
   }
-}
-
-const orders = [];
-
-function renderTotalOrder(id, quantity) {
-  const cartList = document.querySelector('.cart__list');
-  const cartQuantity = document.querySelector('.cart__title');
-  const emptyContainer = document.querySelector('.cart__container--empty');
-
-  const order = {
-    id: id,
-    name: data[id].name,
-    quantity: quantity,
-    price: data[id].price,
-    totalPrice: quantity * data[id].price,
-  };
-  console.log(order);
-
-  const existingOrderIndex = orders.findIndex(o => o.id === id);
-
-  if (existingOrderIndex !== -1) {
-    orders[existingOrderIndex].quantity = quantity;
-    orders[existingOrderIndex].totalPrice = order.quantity * order.price;
-  } else {
-    orders.push(order);
-  }
-
-  const totalQuantity = orders.reduce((acc, item) => (acc += item.quantity), 0);
-
-  cartQuantity.textContent = `Your Cart (${totalQuantity})`;
-  cartQuantity.style.marginBottom = '35px';
-
-  const markupCart = orders
-    .map(order => {
-      return `
-      <p>${order.name}</p>`;
-    })
-    .join('');
-
-  emptyContainer.innerHTML = '';
-  cartList.innerHTML = markupCart;
 }

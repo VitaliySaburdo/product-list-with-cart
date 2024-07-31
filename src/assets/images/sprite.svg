@@ -36,7 +36,7 @@
     </symbol>
 
     <symbol id="icon-icon-remove-item" viewBox="0 0 32 32">
-      <path fill="#caafa7" style="fill: var(--color4, #caafa7)"
+      <path fill="currentColor"
         d="M26.8 30l-10.8-10.8-10.8 10.8-3.2-3.2 10.8-10.8-10.8-10.8 3.2-3.2 10.8 10.8 10.8-10.8 3.2 3.2-10.8 10.8 10.8 10.8-3.2 3.2z">
       </path>
     </symbol>
