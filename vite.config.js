@@ -6,4 +6,14 @@ export default defineConfig({
   build: {
     outDir: 'dist',
   },
+  plugins: [
+    viteStaticCopy({
+      targets: [
+        {
+          src: 'src/assets/images/*',
+          dest: 'assets/images',
+        },
+      ],
+    }),
+  ],
 });
