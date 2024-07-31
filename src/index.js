@@ -6,7 +6,7 @@ const list = document.querySelector('.product-list');
 
 const quantities = {};
 
-renderList(data);
+// renderList(data);
 
 list.addEventListener('click', onBtn);
 
