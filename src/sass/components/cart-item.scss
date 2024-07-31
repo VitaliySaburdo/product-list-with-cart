@@ -56,7 +56,32 @@
   &.selected {
     background-color: var(--red);
     border: none;
+    justify-content: space-between;
+    padding-left: 12px;
+    padding-right: 12px;
+    color: var(--rose-50);
+    cursor: auto;
   }
+}
+
+.product__button {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid var(--rose-50);
+  background-color: transparent;
+  @include centered-flex();
+  &:hover {
+    background-color: var(--rose-50);
+    .btn__icon {
+      color: var(--red);
+    }
+  }
+}
+
+.btn__icon {
+  color: var(--rose-50);
+  cursor: pointer;
 }
 
 .product-list__category {

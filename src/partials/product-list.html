@@ -19,11 +19,7 @@
               width="250"
               height="210"
             />
-            <button class="product-list__button selected">
-              <button class="product-list__button--decrement">-</button>
-              1
-              <button class="product-list__button--increment">+</button>
-            </button>
+
             <p class="product-list__category">Waffle</p>
             <p class="product-list__name">Waffle with Berries</p>
             <p class="product-list__price">$6.50</p>
@@ -32,10 +28,23 @@
       </div>
       <div class="cart__container">
         <p class="cart__title">Your Cart (0)</p>
-        <svg width="120" height="120" class="cart__image">
-          <use href="../assets/images/sprite.svg#icon-illustration-empty-cart"></use>
-        </svg>
-        <p class="cart__text">Your added items will appear here</p>
+        <!-- <div class="cart__container--empty">
+          <svg width="120" height="120" class="cart__image">
+            <use href="../assets/images/sprite.svg#icon-illustration-empty-cart"></use>
+          </svg>
+          <p class="cart__text">Your added items will appear here</p>
+        </div> -->
+        <ul class="cart__list">
+          <li>
+            <p>Waffle with Berries</p>
+            <div style="display: flex">
+              <p>1x</p>
+              <p>@$6.5</p>
+              <p>$6.5</p>
+            </div>
+            <button>X</button>
+          </li>
+        </ul>
       </div>
     </div>
   </div>

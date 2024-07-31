@@ -1,52 +1,102 @@
-// import data from './data/data.json';
+import data from './data/data.json';
+import { renderList } from './js/renderList';
 
-// const list = document.querySelector('.product-list');
+const list = document.querySelector('.product-list');
 
-// renderList(data);
+const quantities = {};
 
-// function renderList(cards) {
-//   const markup = cards
-//     .map((card, idx) => {
-//       return `
-//       <li class="product-list__item"  id=${idx}>
-//         <img
-//           class="product-list__image"
-//                         srcset="
-//               ${card.image.desktop} 250w,
-//               ${card.image.mobile} 325w
-//               "
-//               sizes="
-//                 (min-width: 1440px) 250px,
-//                 100vw"
-//           src=${card.image.mobile}
-//           alt=${card.name}
-//               width="250"
-//               height="210"
-//         />
-//         <button class="product-list__button" data-id=${idx}>
-//           <svg width="18" height="18">
-//             <use href="../assets/images/sprite.svg#icon-icon-add-to-cart"></use>
-//           </svg>
-//           Add to Cart
-//         </button>
-//         <p class="product-list__category">${card.category}</p>
-//         <p class="product-list__name">${card.name}</p>
-//         <p class="product-list__price">$${card.price.toFixed(2)}</p>
-//       </li>`;
-//     })
-//     .join('');
+renderList(data);
 
-//   list.innerHTML = markup;
-// }
+list.addEventListener('click', onBtn);
 
-// list.addEventListener('click', onBtn);
+function onBtn(event) {
+  const target = event.target;
 
-// function onBtn(event) {
-//   const target = event.target;
+  if (target.closest('.product-list__button')) {
+    const button = target.closest('.product-list__button');
+    const cardId = button.dataset.id;
 
-//   if (target.closest('.product-list__button')) {
-//     const button = target.closest('.product-list__button');
-//     button.classList.add('selected');
-//     button.innerHTML = '';
-//   }
-// }
+    if (!quantities[cardId]) {
+      quantities[cardId] = 1;
+    }
+
+    button.classList.add('selected');
+    button.innerHTML = ` 
+      <button
+        class="product__button product__button--decrement"
+        aria-label="Decrease quantity"
+        data-id=${cardId}
+      >
+        <span class="btn__icon">-</span>
+      </button>
+      <span class="product__quantity" data-id=${cardId}>${quantities[cardId]}</span>
+      <button
+        class="product__button product__button--increment"
+        aria-label="Increase quantity"
+        data-id=${cardId}
+      >
+        <span class="btn__icon">+</span>
+      </button>
+    `;
+
+    const decrement = button.querySelector('.product__button--decrement');
+    const increment = button.querySelector('.product__button--increment');
+    const quantityDisplay = button.querySelector('.product__quantity');
+
+    decrement.addEventListener('click', () => {
+      if (quantities[cardId] > 0) {
+        quantities[cardId] -= 1;
+        quantityDisplay.textContent = quantities[cardId];
+        renderTotalOrder(cardId, quantities[cardId]);
+      }
+    });
+
+    increment.addEventListener('click', () => {
+      quantities[cardId] += 1;
+      quantityDisplay.textContent = quantities[cardId];
+      renderTotalOrder(cardId, quantities[cardId]);
+    });
+    renderTotalOrder(cardId, quantities[cardId]);
+  }
+}
+
+const orders = [];
+
+function renderTotalOrder(id, quantity) {
+  const cartList = document.querySelector('.cart__list');
+  const cartQuantity = document.querySelector('.cart__title');
+  const emptyContainer = document.querySelector('.cart__container--empty');
+
+  const order = {
+    id: id,
+    name: data[id].name,
+    quantity: quantity,
+    price: data[id].price,
+    totalPrice: quantity * data[id].price,
+  };
+  console.log(order);
+
+  const existingOrderIndex = orders.findIndex(o => o.id === id);
+
+  if (existingOrderIndex !== -1) {
+    orders[existingOrderIndex].quantity = quantity;
+    orders[existingOrderIndex].totalPrice = order.quantity * order.price;
+  } else {
+    orders.push(order);
+  }
+
+  const totalQuantity = orders.reduce((acc, item) => (acc += item.quantity), 0);
+
+  cartQuantity.textContent = `Your Cart (${totalQuantity})`;
+  cartQuantity.style.marginBottom = '35px';
+
+  const markupCart = orders
+    .map(order => {
+      return `
+      <p>${order.name}</p>`;
+    })
+    .join('');
+
+  emptyContainer.innerHTML = '';
+  cartList.innerHTML = markupCart;
+}
