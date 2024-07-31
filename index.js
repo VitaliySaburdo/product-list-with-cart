@@ -1,3 +1,4 @@
+import './src/sass/index.scss';
 import data from './src/data/data.json';
 import { renderList } from './src/js/renderList';
 import { renderTotalOrder } from './src/js/renderTotalOrder';
