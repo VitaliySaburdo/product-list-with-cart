@@ -1,9 +1,11 @@
 import './src/sass/index.scss';
-import data from './src/data/data.json';
+import { data } from './src/js/data';
 import { renderList } from './src/js/renderList';
 import { renderTotalOrder } from './src/js/renderTotalOrder';
 
 const list = document.querySelector('.product-list');
+
+console.log(data);
 
 const quantities = {};
 
