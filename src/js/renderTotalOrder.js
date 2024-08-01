@@ -72,3 +72,5 @@ export function renderTotalOrder(id, quantity) {
   cartList.innerHTML = markupCartList;
   totalContainer.innerHTML = markupTotal;
 }
+
+export function removeOrder(id) {}
