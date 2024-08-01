@@ -4,13 +4,12 @@ import { renderOrderList } from './renderOrderList';
 
 const cartList = document.querySelector('.cart__list');
 const totalContainer = document.querySelector('.cart__total-price');
+const emptyContainer = document.querySelector('.cart__container--empty');
+const cartQuantity = document.querySelector('.cart__title');
 
 const orders = [];
 
 export function renderTotalOrder(id, quantity) {
-  const cartQuantity = document.querySelector('.cart__title');
-  const emptyContainer = document.querySelector('.cart__container--empty');
-
   const order = {
     id: id,
     name: data[id].name,
@@ -52,6 +51,19 @@ export function removeOrder() {
         cartList.innerHTML = renderOrderList(orders);
         const totalPrice = orders.reduce((acc, item) => (acc += item.totalPrice), 0);
         totalContainer.innerHTML = renderTotal(totalPrice);
+        console.log(orders.length);
+        if (orders.length === 0) {
+          console.log('true');
+          cartList.innerHTML = '';
+          totalContainer.innerHTML = '';
+          emptyContainer.innerHTML = `
+          <svg width="120" height="120" class="cart__image">
+            <use href="../assets/images/sprite.svg#icon-illustration-empty-cart"></use>
+          </svg>
+          `;
+          cartQuantity.textContent = `Your Cart (${0})`;
+          return;
+        }
         removeOrder();
       }
     });

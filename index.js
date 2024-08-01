@@ -1,13 +1,13 @@
 import './src/sass/index.scss';
 import data from './src/data/data.json';
-import { renderList } from './src/js/renderList';
+import { renderProductList } from './src/js/renderProductList';
 import { renderTotalOrder } from './src/js/renderTotalOrder';
 
 const list = document.querySelector('.product-list');
 
 const quantities = {};
 
-renderList(data);
+renderProductList(data);
 
 list.addEventListener('click', onBtn);
 

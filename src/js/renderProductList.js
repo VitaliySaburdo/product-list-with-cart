@@ -1,6 +1,6 @@
 const list = document.querySelector('.product-list');
 
-export function renderList(cards) {
+export function renderProductList(cards) {
   const markup = cards
     .map((card, idx) => {
       return `
