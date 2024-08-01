@@ -11,7 +11,7 @@ renderProductList(data);
 
 list.addEventListener('click', onBtn);
 
-function onBtn(event) {
+export function onBtn(event) {
   const target = event.target;
 
   if (target.closest('.product-list__button')) {
@@ -23,6 +23,7 @@ function onBtn(event) {
     }
 
     button.classList.add('selected');
+
     button.innerHTML = ` 
       <button
         class="product__button product__button--decrement"

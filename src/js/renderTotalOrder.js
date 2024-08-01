@@ -51,7 +51,16 @@ export function removeOrder() {
         cartList.innerHTML = renderOrderList(orders);
         const totalPrice = orders.reduce((acc, item) => (acc += item.totalPrice), 0);
         totalContainer.innerHTML = renderTotal(totalPrice);
-        console.log(orders.length);
+        const productButton = document.querySelector(`.product-list__button[data-id="${cardId}"]`);
+        productButton.classList.remove('selected');
+        if (productButton) {
+          productButton.innerHTML = `
+          <svg width="18" height="18">
+            <use href="../assets/images/sprite.svg#icon-icon-add-to-cart"></use>
+          </svg>
+          Add to Cart
+          `;
+        }
         if (orders.length === 0) {
           console.log('true');
           cartList.innerHTML = '';
