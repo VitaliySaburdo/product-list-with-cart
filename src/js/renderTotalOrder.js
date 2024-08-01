@@ -62,7 +62,6 @@ export function removeOrder() {
           `;
         }
         if (orders.length === 0) {
-          console.log('true');
           cartList.innerHTML = '';
           totalContainer.innerHTML = '';
           emptyContainer.innerHTML = `
