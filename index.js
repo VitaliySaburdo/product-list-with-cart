@@ -29,7 +29,7 @@ function onBtn(event) {
         aria-label="Decrease quantity"
         data-id=${cardId}
       >
-        <svg width="18" height="18" class="cart__image">
+        <svg width="10" height="10">
             <use href="assets/images/sprite.svg#icon-icon-decrement-quantity"></use>
         </svg>
       </button>
@@ -39,7 +39,7 @@ function onBtn(event) {
         aria-label="Increase quantity"
         data-id=${cardId}
       >
-        <svg width="18" height="18" class="cart__image">
+        <svg width="10" height="10" >
             <use href="assets/images/sprite.svg#icon-icon-increment-quantity"></use>
         </svg>
       </button>
