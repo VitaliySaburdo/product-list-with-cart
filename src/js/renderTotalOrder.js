@@ -1,9 +1,10 @@
 import data from '../data/data.json';
 
+const cartList = document.querySelector('.cart__list');
+
 const orders = [];
 
 export function renderTotalOrder(id, quantity) {
-  const cartList = document.querySelector('.cart__list');
   const cartQuantity = document.querySelector('.cart__title');
   const emptyContainer = document.querySelector('.cart__container--empty');
   const totalContainer = document.querySelector('.cart__total-price');
@@ -32,28 +33,6 @@ export function renderTotalOrder(id, quantity) {
 
   const totalPrice = orders.reduce((acc, item) => (acc += item.totalPrice), 0);
 
-  const markupCartList = orders
-    .map(order => {
-      return `
-          <li class="cart__item" data-id=${order.id}>
-            <div class="cart__item--container">
-              <p class="cart__item--name">${order.name}</p>
-              <div class="cart__item--information">
-                <p class="cart__item--quantity">${order.quantity}x</p>
-                <p class="cart__item--price">@$${order.price.toFixed(2)}</p>
-                <p class="cart__item--total-price">$${order.totalPrice.toFixed(2)}</p>
-              </div>
-            </div>
-              <button class="cart__item--close-btn">
-              <svg class="cart__item--close" width="10" height="10">
-                <use href="assets/images/sprite.svg#icon-icon-remove-item"></use>
-              </svg>
-            </button>
-          </li>
-      `;
-    })
-    .join('');
-
   const markupTotal = `
         <div class="cart__total-price--container">
           <p class="cart__total-price--title">Order Total</p>
@@ -69,8 +48,47 @@ export function renderTotalOrder(id, quantity) {
   `;
 
   emptyContainer.innerHTML = '';
-  cartList.innerHTML = markupCartList;
+  cartList.innerHTML = renderOrderList(orders);
   totalContainer.innerHTML = markupTotal;
+  removeOrder();
 }
 
-export function removeOrder(id) {}
+function renderOrderList(orders) {
+  return orders
+    .map(order => {
+      return `
+          <li class="cart__item" data-id=${order.id}>
+            <div class="cart__item--container">
+              <p class="cart__item--name">${order.name}</p>
+              <div class="cart__item--information">
+                <p class="cart__item--quantity">${order.quantity}x</p>
+                <p class="cart__item--price">@$${order.price.toFixed(2)}</p>
+                <p class="cart__item--total-price">$${order.totalPrice.toFixed(2)}</p>
+              </div>
+            </div>
+              <button class="cart__item--close-btn" data-id=${order.id}>
+              <svg class="cart__item--close" width="10" height="10">
+                <use href="assets/images/sprite.svg#icon-icon-remove-item"></use>
+              </svg>
+            </button>
+          </li>
+      `;
+    })
+    .join('');
+}
+
+export function removeOrder() {
+  const removeBtns = document.querySelectorAll('.cart__item--close-btn');
+  removeBtns.forEach(button => {
+    button.addEventListener('click', () => {
+      const cardId = button.dataset.id;
+      const orderIndex = orders.findIndex(order => order.id == cardId);
+      if (orderIndex !== -1) {
+        orders.splice(orderIndex, 1);
+        cartList.innerHTML = renderOrderList(orders);
+        removeOrder();
+        console.log(orders);
+      }
+    });
+  });
+}
