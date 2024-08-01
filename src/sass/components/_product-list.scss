@@ -71,17 +71,12 @@
   border: 1px solid var(--rose-50);
   background-color: transparent;
   @include centered-flex();
-  &:hover {
-    background-color: var(--rose-50);
-    .btn__icon {
-      color: var(--red);
-    }
-  }
-}
-
-.btn__icon {
   color: var(--rose-50);
   cursor: pointer;
+  &:hover {
+    background-color: var(--rose-50);
+    fill: var(--red);
+  }
 }
 
 .product-list__category {

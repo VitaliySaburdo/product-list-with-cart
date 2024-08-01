@@ -44,7 +44,11 @@ export function renderTotalOrder(id, quantity) {
                 <p class="cart__item--total-price">$${order.totalPrice.toFixed(2)}</p>
               </div>
             </div>
-            <button class="cart__item--close-btn">X</button>
+              <button class="cart__item--close-btn">
+              <svg class="cart__item--close" width="10" height="10">
+                <use href="assets/images/sprite.svg#icon-icon-remove-item"></use>
+              </svg>
+            </button>
           </li>
       `;
     })
