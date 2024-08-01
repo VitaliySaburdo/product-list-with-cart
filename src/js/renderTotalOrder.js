@@ -6,7 +6,7 @@ export function renderTotalOrder(id, quantity) {
   const cartList = document.querySelector('.cart__list');
   const cartQuantity = document.querySelector('.cart__title');
   const emptyContainer = document.querySelector('.cart__container--empty');
-  const totalContainer = document.querySelector('.cart__total-price--container');
+  const totalContainer = document.querySelector('.cart__total-price');
 
   const order = {
     id: id,
@@ -54,12 +54,21 @@ export function renderTotalOrder(id, quantity) {
     })
     .join('');
 
-  // const markupTotal = `
-  //         <p class="cart__total-price--title">Order Total</p>
-  //         <p class="cart__total-price">$${totalPrice.toFixed(2)}</p>
-  // `;
+  const markupTotal = `
+        <div class="cart__total-price--container">
+          <p class="cart__total-price--title">Order Total</p>
+          <p class="cart__total-price--text">$${totalPrice}</p>
+        </div>
+        <div class="cart__delivery">
+          <svg width="18" height="18">
+            <use href="../assets/images/sprite.svg#icon-icon-carbon-neutral"></use>
+          </svg>
+          <p class="cart__delivery--text">This is a <b>carbon-neutral</b> delivery</p>
+        </div>
+        <button class="cart__total--btn">Confirm Order</button>
+  `;
 
   emptyContainer.innerHTML = '';
   cartList.innerHTML = markupCartList;
-  // totalContainer.innerHTML = markupTotal;
+  totalContainer.innerHTML = markupTotal;
 }
