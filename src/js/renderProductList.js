@@ -5,6 +5,7 @@ export function renderProductList(cards) {
     .map((card, idx) => {
       return `
       <li class="product-list__item" id=${idx}>
+      <div class="product-list__image--container" id=${idx}>
         <img
           class="product-list__image"
           srcset="
@@ -19,6 +20,7 @@ export function renderProductList(cards) {
           width="250"
           height="210"
         />
+        </div>
         <button class="product-list__button" data-id=${idx}>
           <svg width="18" height="18">
             <use href="../assets/images/sprite.svg#icon-icon-add-to-cart"></use>
