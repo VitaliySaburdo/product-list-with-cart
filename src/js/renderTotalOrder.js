@@ -55,6 +55,11 @@ export function removeOrder() {
         totalContainer.innerHTML = renderTotal(totalPrice);
         const productButton = document.querySelector(`.product-list__button[data-id="${cardId}"]`);
         productButton.classList.remove('selected');
+        const imageContainer = document.querySelector(
+          `.product-list__image--container[data-id="${cardId}"]`
+        );
+
+        imageContainer.classList.remove('selected');
 
         // quantities[cardId] = 1;
 
