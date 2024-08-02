@@ -1,17 +1,18 @@
 import './src/sass/index.scss';
 import data from './src/data/data.json';
 import { renderProductList } from './src/js/renderProductList';
-import { renderTotalOrder } from './src/js/renderTotalOrder';
+import { addOrderInCartList, orders } from './src/js/renderTotalOrder';
+import { openModal } from './src/js/modalWindowConfirmOrder';
 
 const list = document.querySelector('.product-list');
 
-const quantities = {};
+export const quantities = {};
 
 renderProductList(data);
 
-list.addEventListener('click', onBtn);
+list.addEventListener('click', onAddToCartBtn);
 
-export function onBtn(event) {
+export function onAddToCartBtn(event) {
   const target = event.target;
 
   if (target.closest('.product-list__button')) {
@@ -24,7 +25,33 @@ export function onBtn(event) {
 
     button.classList.add('selected');
 
-    button.innerHTML = ` 
+    button.innerHTML = reRenderAddToCartBtn(cardId, quantities);
+
+    const decrement = button.querySelector('.product__button--decrement');
+    const increment = button.querySelector('.product__button--increment');
+    const quantityDisplay = button.querySelector('.product__quantity');
+
+    decrement.addEventListener('click', () => {
+      if (quantities[cardId] > 0) {
+        quantities[cardId] -= 1;
+        quantityDisplay.textContent = quantities[cardId];
+        addOrderInCartList(cardId, quantities[cardId]);
+      }
+    });
+
+    increment.addEventListener('click', () => {
+      console.log('click');
+      quantities[cardId] += 1;
+      quantityDisplay.textContent = quantities[cardId];
+      addOrderInCartList(cardId, quantities[cardId]);
+    });
+    addOrderInCartList(cardId, quantities[cardId]);
+    openModal(orders);
+  }
+}
+
+function reRenderAddToCartBtn(cardId, quantities) {
+  return ` 
       <button
         class="product__button product__button--decrement"
         aria-label="Decrease quantity"
@@ -45,24 +72,4 @@ export function onBtn(event) {
         </svg>
       </button>
     `;
-
-    const decrement = button.querySelector('.product__button--decrement');
-    const increment = button.querySelector('.product__button--increment');
-    const quantityDisplay = button.querySelector('.product__quantity');
-
-    decrement.addEventListener('click', () => {
-      if (quantities[cardId] > 0) {
-        quantities[cardId] -= 1;
-        quantityDisplay.textContent = quantities[cardId];
-        renderTotalOrder(cardId, quantities[cardId]);
-      }
-    });
-
-    increment.addEventListener('click', () => {
-      quantities[cardId] += 1;
-      quantityDisplay.textContent = quantities[cardId];
-      renderTotalOrder(cardId, quantities[cardId]);
-    });
-    renderTotalOrder(cardId, quantities[cardId]);
-  }
 }

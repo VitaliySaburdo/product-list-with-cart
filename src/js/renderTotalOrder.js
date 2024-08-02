@@ -1,15 +1,17 @@
 import data from '../data/data.json';
+import { quantities } from '../../index';
 import { renderTotal } from './renderTotal';
 import { renderOrderList } from './renderOrderList';
+import { openModal } from './modalWindowConfirmOrder';
 
 const cartList = document.querySelector('.cart__list');
 const totalContainer = document.querySelector('.cart__total-price');
 const emptyContainer = document.querySelector('.cart__container--empty');
 const cartQuantity = document.querySelector('.cart__title');
 
-const orders = [];
+export const orders = [];
 
-export function renderTotalOrder(id, quantity) {
+export function addOrderInCartList(id, quantity) {
   const order = {
     id: id,
     name: data[id].name,
@@ -53,6 +55,9 @@ export function removeOrder() {
         totalContainer.innerHTML = renderTotal(totalPrice);
         const productButton = document.querySelector(`.product-list__button[data-id="${cardId}"]`);
         productButton.classList.remove('selected');
+
+        // quantities[cardId] = 1;
+
         if (productButton) {
           productButton.innerHTML = `
           <svg width="18" height="18">
@@ -73,6 +78,7 @@ export function removeOrder() {
           return;
         }
         removeOrder();
+        openModal(orders);
       }
     });
   });
