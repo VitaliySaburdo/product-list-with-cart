@@ -10,6 +10,6 @@ export function renderTotal(total) {
           </svg>
           <p class="cart__delivery--text">This is a <b>carbon-neutral</b> delivery</p>
         </div>
-        <button class="btn">Confirm Order</button>
+        <button class="cart__total--btn btn">Confirm Order</button>
   `;
 }

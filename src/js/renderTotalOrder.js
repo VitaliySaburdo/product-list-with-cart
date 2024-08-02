@@ -1,7 +1,7 @@
 import data from '../data/data.json';
 import { renderTotal } from './renderTotal';
 import { renderOrderList } from './renderOrderList';
-import { openModal } from './modalWindowConfirmOrder';
+import { modalWindowConfirm } from './modalWindowConfirmOrder';
 
 const cartList = document.querySelector('.cart__list');
 const totalContainer = document.querySelector('.cart__total-price');
@@ -85,7 +85,7 @@ export function removeOrder() {
           return;
         }
         removeOrder();
-        openModal(orders);
+        modalWindowConfirm(orders);
       }
     });
   });

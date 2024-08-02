@@ -2,7 +2,7 @@ import './src/sass/index.scss';
 import data from './src/data/data.json';
 import { renderProductList } from './src/js/renderProductList';
 import { addOrderInCartList, orders } from './src/js/renderTotalOrder';
-import { openModal } from './src/js/modalWindowConfirmOrder';
+import { modalWindowConfirm } from './src/js/modalWindowConfirmOrder';
 
 const list = document.querySelector('.product-list');
 
@@ -51,7 +51,7 @@ export function onAddToCartBtn(event) {
       addOrderInCartList(cardId, quantities[cardId]);
     });
     addOrderInCartList(cardId, quantities[cardId]);
-    openModal(orders);
+    modalWindowConfirm(orders);
   }
 }
 

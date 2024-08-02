@@ -3,15 +3,33 @@
     <svg width="40" height="40" class="modal__icon">
       <use href="../assets/images/sprite.svg#icon-icon-order-confirmed"></use>
     </svg>
-    <h2 modal__title>Order confirmed</h2>
+    <h2 class="modal__title">Order confirmed</h2>
     <p class="modal__txt">We hope you enjoy your food</p>
     <div class="modal__container">
       <ul class="modal__list">
-        <li class="modal__item"></li>
+        <li class="modal__item">
+          <img
+            class="modal__img"
+            src="../assets/images/image-waffle-thumbnail.jpg"
+            alt="waffle"
+            width="50"
+            height="50"
+          />
+          <div class="modal__item--container">
+            <div class="modal__item--box">
+              <p class="modal__item--name">Classic Tiramisu</p>
+              <div class="modal__item--total-container">
+                <p class="modal__item--quantity">1x</p>
+                <p class="modal__item--price">@5.50</p>
+              </div>
+            </div>
+            <p class="modal__item--total-price">5.50</p>
+          </div>
+        </li>
       </ul>
-      <div>
-        <p></p>
-        <p></p>
+      <div class="modal__total--container">
+        <p class="modal__item--total-txt">Order total</p>
+        <p class="modal__item--total-order">46.50</p>
       </div>
     </div>
     <button class="btn">Start new order</button>
