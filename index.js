@@ -23,7 +23,12 @@ export function onAddToCartBtn(event) {
       quantities[cardId] = 1;
     }
 
+    const imageContainer = document.querySelector(
+      `.product-list__image--container[data-id="${cardId}"]`
+    );
+
     button.classList.add('selected');
+    imageContainer.classList.add('selected');
 
     button.innerHTML = reRenderAddToCartBtn(cardId, quantities);
 

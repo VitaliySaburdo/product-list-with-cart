@@ -5,7 +5,7 @@ export function renderProductList(cards) {
     .map((card, idx) => {
       return `
       <li class="product-list__item" id=${idx}>
-      <div class="product-list__image--container" id=${idx}>
+      <div class="product-list__image--container" data-id=${idx}>
         <img
           class="product-list__image"
           srcset="
