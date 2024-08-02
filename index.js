@@ -6,7 +6,7 @@ import { openModal } from './src/js/modalWindowConfirmOrder';
 
 const list = document.querySelector('.product-list');
 
-export const quantities = {};
+const quantities = {};
 
 renderProductList(data);
 

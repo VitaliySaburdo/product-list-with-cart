@@ -1,5 +1,4 @@
 import data from '../data/data.json';
-import { quantities } from '../../index';
 import { renderTotal } from './renderTotal';
 import { renderOrderList } from './renderOrderList';
 import { openModal } from './modalWindowConfirmOrder';
@@ -60,6 +59,9 @@ export function removeOrder() {
         );
 
         imageContainer.classList.remove('selected');
+
+        const totalQuantity = orders.reduce((acc, item) => (acc += item.quantity), 0);
+        cartQuantity.textContent = `Your Cart (${totalQuantity})`;
 
         // quantities[cardId] = 1;
 
