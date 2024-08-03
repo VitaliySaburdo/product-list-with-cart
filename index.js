@@ -3,6 +3,7 @@ import data from './src/data/data.json';
 import { renderProductList } from './src/js/renderProductList';
 import { addOrderInCartList, orders } from './src/js/renderTotalOrder';
 import { modalWindowConfirm } from './src/js/modalWindowConfirmOrder';
+import { reRenderAddToCartBtn } from './src/js/reRenderAddToCartBtn';
 
 const list = document.querySelector('.product-list');
 
@@ -45,7 +46,6 @@ export function onAddToCartBtn(event) {
     });
 
     increment.addEventListener('click', () => {
-      console.log('click');
       quantities[cardId] += 1;
       quantityDisplay.textContent = quantities[cardId];
       addOrderInCartList(cardId, quantities[cardId]);
@@ -53,28 +53,4 @@ export function onAddToCartBtn(event) {
     addOrderInCartList(cardId, quantities[cardId]);
     modalWindowConfirm(orders);
   }
-}
-
-function reRenderAddToCartBtn(cardId, quantities) {
-  return ` 
-      <button
-        class="product__button product__button--decrement"
-        aria-label="Decrease quantity"
-        data-id=${cardId}
-      >
-        <svg width="10" height="10">
-            <use href="assets/images/sprite.svg#icon-icon-decrement-quantity"></use>
-        </svg>
-      </button>
-      <span class="product__quantity" data-id=${cardId}>${quantities[cardId]}</span>
-      <button
-        class="product__button product__button--increment"
-        aria-label="Increase quantity"
-        data-id=${cardId}
-      >
-        <svg width="10" height="10" >
-            <use href="assets/images/sprite.svg#icon-icon-increment-quantity"></use>
-        </svg>
-      </button>
-    `;
 }

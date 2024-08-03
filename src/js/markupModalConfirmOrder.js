@@ -17,7 +17,7 @@ export function markupModalConfirmOrder(orders) {
           <img
             class="modal__img"
             src=${data[order.id].image.thumbnail}
-            alt="waffle"
+            alt=${order.name}
             width="50"
             height="50"
           />
