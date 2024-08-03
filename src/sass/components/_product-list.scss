@@ -54,6 +54,7 @@
   border: 1px solid var(--rose-900);
   background-color: var(--rose-50);
   cursor: pointer;
+  @include custom-transition(border-color);
 
   &:hover {
     border-color: var(--red);

@@ -73,6 +73,8 @@
   @include centered-flex();
   @include fonts(12, 600);
   cursor: pointer;
+  @include custom-transition(color);
+  @include custom-transition(border-color);
   &:hover {
     border-color: var(--rose-900);
     color: var(--rose-900);
