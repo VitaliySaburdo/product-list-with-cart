@@ -95,7 +95,7 @@
 }
 .modal__item--price {
   @include fonts(12, 600);
-  color: var(--rose-300);
+  color: var(--rose-500);
 }
 .modal__item--total-price {
   @include fonts(12, 600);
