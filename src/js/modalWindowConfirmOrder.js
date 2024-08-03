@@ -1,4 +1,5 @@
 import { markupModalConfirmOrder } from './markupModalConfirmOrder';
+import { newOrderHandler } from './newOrderHandler';
 
 export function modalWindowConfirm(orders) {
   const confirmOrderBtn = document.querySelector('.cart__total--btn');
@@ -12,6 +13,7 @@ export function modalWindowConfirm(orders) {
     backdrop.classList.remove('is-hidden');
     window.addEventListener('keydown', onEscPressKey);
     modalContainer.innerHTML = markupModalConfirmOrder(orders);
+    newOrderHandler(onCloseModal);
   }
 
   function onCloseModal() {

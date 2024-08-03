@@ -1,7 +1,6 @@
 import data from '../data/data.json';
 
 export function markupModalConfirmOrder(orders) {
-  console.log(orders);
   const totalPrice = orders.reduce((acc, item) => (acc += item.totalPrice), 0);
   return `
   <svg width="40" height="40" class="modal__icon">
@@ -40,6 +39,6 @@ export function markupModalConfirmOrder(orders) {
         <p class="modal__item--total-order">${totalPrice}</p>
       </div>
     </div>
-    <button class="btn">Start new order</button>
+    <button class="modal__btn btn">Start new order</button>
   `;
 }
