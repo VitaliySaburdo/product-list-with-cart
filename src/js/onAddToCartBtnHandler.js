@@ -2,7 +2,7 @@ import { addOrderInCartList, orders } from './orderListHandler';
 import { modalWindowConfirm } from './modalWindowConfirmOrder';
 import { reRenderAddToCartBtn } from './reRenderAddToCartBtn';
 
-const quantities = {};
+export const quantities = {};
 
 export function onAddToCartBtnHandler(event) {
   const target = event.target;

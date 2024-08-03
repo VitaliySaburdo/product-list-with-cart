@@ -2,6 +2,7 @@ import data from '../data/data.json';
 import { renderTotal } from './renderTotal';
 import { renderOrderList } from './renderOrderList';
 import { modalWindowConfirm } from './modalWindowConfirmOrder';
+import { quantities } from './onAddToCartBtnHandler';
 
 const cartList = document.querySelector('.cart__list');
 const totalContainer = document.querySelector('.cart__total-price');
@@ -63,7 +64,7 @@ export function removeOrder() {
         const totalQuantity = orders.reduce((acc, item) => (acc += item.quantity), 0);
         cartQuantity.textContent = `Your Cart (${totalQuantity})`;
 
-        // quantities[cardId] = 1;
+        quantities[cardId] = 1;
 
         if (productButton) {
           productButton.innerHTML = `
