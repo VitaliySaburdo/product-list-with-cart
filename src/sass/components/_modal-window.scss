@@ -22,8 +22,11 @@
   left: 50%;
   border-radius: 10px;
   transform: translate(-50%, -50%);
-  padding: 40px;
+  padding: 20px;
   background-color: var(--rose-50);
+  @include mq(desk) {
+    padding: 40px;
+  }
 }
 
 .modal__icon {
@@ -70,11 +73,14 @@
   justify-content: space-between;
 }
 .modal__item {
-  width: 470px;
+  width: 285px;
   height: 100%;
   display: flex;
   padding-bottom: 15px;
   border-bottom: 1px solid var(--rose-300);
+  @include mq(desk) {
+    width: 470px;
+  }
 }
 .modal__total--container {
   display: flex;

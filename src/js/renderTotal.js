@@ -2,7 +2,7 @@ export function renderTotal(total) {
   return `
         <div class="cart__total-price--container">
           <p class="cart__total-price--title">Order Total</p>
-          <p class="cart__total-price--text">$${total}</p>
+          <p class="cart__total-price--text">$${total.toFixed(2)}</p>
         </div>
         <div class="cart__delivery">
           <svg width="18" height="18">

@@ -25,10 +25,10 @@ export function markupModalConfirmOrder(orders) {
               <p class="modal__item--name">${order.name}</p>
               <div class="modal__item--total-container">
                 <p class="modal__item--quantity">${order.quantity}x</p>
-                <p class="modal__item--price">@${order.price}</p>
+                <p class="modal__item--price">@${order.price.toFixed(2)}</p>
               </div>
             </div>
-            <p class="modal__item--total-price">${order.totalPrice}</p>
+            <p class="modal__item--total-price">$${order.totalPrice.toFixed(2)}</p>
           </div>
         </li>
           `;
@@ -36,7 +36,7 @@ export function markupModalConfirmOrder(orders) {
       </ul>
       <div class="modal__total--container">
         <p class="modal__item--total-txt">Order total</p>
-        <p class="modal__item--total-order">${totalPrice}</p>
+        <p class="modal__item--total-order">${totalPrice.toFixed(2)}</p>
       </div>
     </div>
     <button class="modal__btn btn">Start new order</button>
