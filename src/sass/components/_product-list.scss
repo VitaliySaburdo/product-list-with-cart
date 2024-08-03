@@ -30,6 +30,7 @@
 
 .product-list__image--container.selected {
   @include custom-transition(border-color);
+  animation: borderColorAnimation 500ms 3;
   border: 2px solid var(--red);
   border-radius: 10px;
 }
