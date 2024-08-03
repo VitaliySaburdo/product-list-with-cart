@@ -21,7 +21,7 @@
   gap: 25px;
   margin-bottom: 35px;
   @include mq(desk) {
-    max-width: 800px;
+    width: 800px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     height: auto;
