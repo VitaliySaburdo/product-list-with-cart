@@ -20,11 +20,11 @@
     </symbol>
 
     <symbol id="icon-icon-decrement-quantity" viewBox="0 0 32 32">
-      <path fill="#fff" style="fill: var(--color3, #fff)" d="M0 14h32v4h-32v-4z"></path>
+      <path fill="currentColor" d="M0 14h32v4h-32v-4z"></path>
     </symbol>
 
     <symbol id="icon-icon-increment-quantity" viewBox="0 0 32 32">
-      <path fill="#fff" style="fill: var(--color3, #fff)" d="M32 14h-14v-14h-4v14h-14v4h14v14h4v-14h14v-4z"></path>
+      <path fill="currentColor" d="M32 14h-14v-14h-4v14h-14v4h14v14h4v-14h14v-4z"></path>
     </symbol>
 
     <symbol id="icon-icon-order-confirmed" viewBox="0 0 32 32">
