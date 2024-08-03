@@ -29,6 +29,7 @@
 }
 
 .product-list__image--container.selected {
+  @include custom-transition(border-color);
   border: 2px solid var(--red);
   border-radius: 10px;
 }
@@ -61,6 +62,7 @@
   }
 
   &.selected {
+    @include custom-transition(background-color);
     background-color: var(--red);
     border: none;
     justify-content: space-between;
@@ -81,6 +83,8 @@
   @include centered-flex();
   color: var(--rose-50);
   cursor: pointer;
+  @include custom-transition(color);
+  @include custom-transition(border-color);
   &:hover {
     background-color: var(--rose-50);
     color: var(--red);
