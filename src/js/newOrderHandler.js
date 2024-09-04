@@ -1,4 +1,6 @@
 import { renderProductList } from './renderProductList';
+import { quantities } from './onAddToCartBtnHandler';
+import { orders } from './orderListHandler';
 import data from '../data/data.json';
 
 const list = document.querySelector('.product-list');
@@ -6,8 +8,6 @@ const cartList = document.querySelector('.cart__list');
 const totalContainer = document.querySelector('.cart__total-price');
 const emptyContainer = document.querySelector('.cart__container--empty');
 const cartQuantity = document.querySelector('.cart__title');
-import { quantities } from './onAddToCartBtnHandler';
-import { orders } from './orderListHandler';
 
 export function newOrderHandler(onCloseModal) {
   const addNewOrderBtn = document.querySelector('.modal__btn');
