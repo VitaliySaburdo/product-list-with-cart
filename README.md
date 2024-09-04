@@ -1,6 +1,4 @@
-# Name of project
-
-![Design preview for the E-commerce product page](./)
+# Product list with cart solution
 
 ## Table of contents
 
@@ -11,8 +9,6 @@
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Install and usage](#install-and-usage)
-- [Author](#author)
 
 ## Overview
 
@@ -20,53 +16,40 @@
 
 Users should be able to:
 
-- View the optimal layout for the site depending on their device's screen size
-- See hover states for all interactive elements on the page
-- Open a lightbox gallery by clicking on the large product image
-- Switch the large product image by clicking on the small thumbnail images
-- Add items to the cart
-- View the cart and remove items from it
+- Add items to the cart and remove them
+- Increase/decrease the number of items in the cart
+- See an order confirmation modal when they click "Confirm Order"
+- Reset their selections when they click "Start New Order"
+- View the optimal layout for the interface depending on their device's screen size
+- See hover and focus states for all interactive elements on the page
 
 ### Screenshot
 
-![Empty page](./src/)
+![](./src/assets/images/screenshot_1.jpg)
 
-![Show product](./src/)
-
-![Create order](./src/)
+![](./src/assets/images/screenshot_2.jpg)
 
 ### Links
 
-- Solution URL: [Github](https://github.com/VitaliySaburdo/)
-- Live Site URL: [Vercel](https://)
+- Solution URL: [Add solution URL here](https://github.com/VitaliySaburdo/Product-list-with-cart)
+- Live Site URL: [Add live site URL here](https://product-list-with-cart-two.vercel.app/)
 
 ## My process
 
 ### Built with
 
 - Semantic HTML5 markup
+- SASS (mixins)
+- BEM
+- CSS variables
 - CSS custom properties
 - Flexbox
 - CSS Grid
-- SASS
 - Mobile-first workflow
-- [Typescript](https://www.typescriptlang.org/) - strongly typed programming
-  language that builds on JavaScript
-- [React](https://reactjs.org/) - JS library
+- JS
 
 ### What I learned
 
-<!-- How to import as a component using vite-plugin-svgr and then apply custom styles to it. -->
-
-### Install and usage
-
-Clone this repository to your local machine using git clone
-https://github.com/VitaliySaburdo/ecommerce-product-page Run npm install to
-install the dependencies. Run npm run dev to start the development server. Open
-http://localhost:8080 in your web browser.
-
-## Author
-
-- Website - [Vitaliy Saburdo](https://github.com/VitaliySaburdo)
-- Frontend Mentor -
-  [@VitaliySaburdo](https://www.frontendmentor.io/profile/VitaliySaburdo)
+Setting up a collector based on vite vanilla js. Mastered deployment on vercel. Reusing styles in a
+project. Adaptive layout. The use of images with adaptation to the screens of different devices.
+Using mixins in a project. Naming by BEM.

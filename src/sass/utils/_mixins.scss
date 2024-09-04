@@ -1,43 +1,36 @@
+// Card-set
 @mixin card-set($card-gap: 20px) {
   display: flex;
   flex-wrap: wrap;
   gap: $card-gap;
 }
-
+// Card item
 @mixin card-item($card-item: 1, $card-gap: 20px) {
   flex-basis: calc((100% - #{$card-gap} * (#{$card-item} - 1)) / #{$card-item});
 }
-
-@mixin fonts($fs, $fw, $lh) {
-  font-size: $fs;
+// Fonts
+@mixin fonts($fs, $fw) {
+  font-size: #{$fs}px;
   font-weight: $fw;
-  line-height: calc($lh/$fs);
 }
-
+// Section
 @mixin section($pt: 60px, $pb: 60px) {
   padding-top: $pt;
   padding-bottom: $pb;
 }
-
+// Flex
 @mixin centered-flex() {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
+// Adaptive
 @mixin mq($range) {
-  $mob: 480px;
-  $tab: 768px;
-  $desk: 1280px;
+  $mob: 375px;
+  $desk: 1440px;
 
   @if $range==mob {
     @media screen and (min-width: $mob) {
-      @content;
-    }
-  }
-
-  @if $range==tab {
-    @media screen and (min-width: $tab) {
       @content;
     }
   }
@@ -54,15 +47,15 @@
     }
   }
 
-  @if $range==tab-only {
-    @media (min-width:$tab) and (max-width:#{$desk - 0.02}) {
-      @content;
-    }
-  }
-
   @if $range==mob-only {
     @media (max-width:#{$tab - 0.02}) {
       @content;
     }
   }
+}
+
+@mixin custom-transition($property) {
+  transition-property: $property;
+  transition-duration: 350ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }

@@ -1,0 +1,113 @@
+.cart__container {
+  padding: 30px 20px;
+  background-color: var(--white);
+  border-radius: 10px;
+  @include mq(desk) {
+    flex: 1;
+    align-self: flex-start;
+  }
+}
+.cart__title {
+  @include fonts(20, 700);
+  color: var(--red);
+  margin-bottom: 50px;
+}
+.cart__image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+}
+.cart__text {
+  @include fonts(14, 600);
+  color: var(--rose-400);
+  text-align: center;
+}
+
+.cart__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  border-bottom: 1px solid var(--rose-100);
+}
+
+.cart__item--information {
+  display: flex;
+}
+
+.cart__item--container {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart__item--name {
+  @include fonts(12, 600);
+  margin-bottom: 18px;
+}
+
+.cart__item--quantity {
+  @include fonts(12, 600);
+  color: var(--red);
+  margin-right: 18px;
+}
+
+.cart__item--price {
+  @include fonts(12, 600);
+  color: var(--rose-300);
+  margin-right: 10px;
+}
+
+.cart__item--total-price {
+  @include fonts(12, 600);
+}
+
+.cart__item--close-btn {
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--rose-300);
+  color: var(--rose-300);
+  background-color: transparent;
+  @include centered-flex();
+  @include fonts(12, 600);
+  cursor: pointer;
+  @include custom-transition(color);
+  @include custom-transition(border-color);
+  &:hover {
+    border-color: var(--rose-900);
+    color: var(--rose-900);
+    fill: var(--rose-900);
+  }
+}
+
+.cart__total-price--title {
+  @include fonts(12, 600);
+  color: var(--rose-500);
+  margin-bottom: 35px;
+}
+
+.cart__total-price--text {
+  @include fonts(16, 900);
+}
+
+.cart__total-price--container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart__delivery {
+  width: 100%;
+  height: 50px;
+  @include centered-flex();
+  gap: 5px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--rose-100);
+  margin-bottom: 20px;
+}
+
+.cart__delivery--text {
+  @include fonts(12, 500);
+}

@@ -1,0 +1,112 @@
+.modal__backdrop {
+  position: fixed;
+  z-index: 2000;
+  overflow: scroll;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  @include custom-transition(opacity);
+  &.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.modal__window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: var(--rose-50);
+  @include mq(desk) {
+    padding: 40px;
+  }
+}
+
+.modal__icon {
+  display: block;
+  margin-bottom: 35px;
+}
+.modal__title {
+  @include fonts(30, 900);
+  margin-bottom: 20px;
+}
+.modal__txt {
+  @include fonts(14, 500);
+  color: var(--rose-300);
+  margin-bottom: 30px;
+}
+.modal__container {
+  background-color: var(--rose-100);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.modal__img {
+  border-radius: 5px;
+  margin-right: 15px;
+}
+
+.modal__item--total-container {
+  display: flex;
+  gap: 20px;
+}
+
+.modal__item--container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.modal__item--box {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.modal__item {
+  width: 285px;
+  height: 100%;
+  display: flex;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--rose-300);
+  @include mq(desk) {
+    width: 470px;
+  }
+}
+.modal__total--container {
+  display: flex;
+  padding-top: 30px;
+}
+.modal__item--name {
+  @include fonts(12, 600);
+}
+.modal__item--quantity {
+  @include fonts(12, 600);
+  color: var(--red);
+}
+.modal__item--price {
+  @include fonts(12, 600);
+  color: var(--rose-500);
+}
+.modal__item--total-price {
+  @include fonts(12, 600);
+}
+.modal__total--container {
+  display: flex;
+  justify-content: space-between;
+}
+.modal__item--total-txt {
+  @include fonts(12, 600);
+  color: var(--rose-500);
+}
+.modal__item--total-order {
+  @include fonts(16, 900);
+}

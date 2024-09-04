@@ -1,0 +1,12 @@
+@keyframes borderColorAnimation {
+  0% {
+    border-color: var(--red);
+  }
+  50% {
+    border-color: var(--rose-300);
+  }
+
+  100% {
+    border-color: var(--red);
+  }
+}

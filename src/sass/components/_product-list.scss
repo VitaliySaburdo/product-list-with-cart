@@ -1,0 +1,114 @@
+.section__title {
+  padding-top: 30px;
+  padding-bottom: 40px;
+  @include mq(desk) {
+    padding-top: 0;
+  }
+}
+
+.product__container {
+  margin-left: auto;
+  margin-right: auto;
+  @include mq(desk) {
+    display: flex;
+    gap: 30px;
+  }
+}
+
+.product-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 35px;
+  @include mq(desk) {
+    width: 800px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: auto;
+  }
+}
+
+.product-list__image--container.selected {
+  @include custom-transition(border-color);
+  animation: borderColorAnimation 300ms 2;
+  border: 2px solid var(--red);
+  border-radius: 10px;
+}
+
+.product-list__image {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.product-list__button {
+  position: relative;
+  z-index: 100;
+  margin-top: -20px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 20px;
+  @include centered-flex();
+  gap: 10px;
+  height: 40px;
+  width: 160px;
+  @include fonts(12, 600);
+  border-radius: 30px;
+  border: 1px solid var(--rose-900);
+  background-color: var(--rose-50);
+  cursor: pointer;
+  @include custom-transition(border-color);
+
+  &:hover {
+    border-color: var(--red);
+  }
+
+  &.selected {
+    @include custom-transition(background-color);
+    background-color: var(--red);
+    border: none;
+    justify-content: space-between;
+    padding-left: 12px;
+    padding-right: 12px;
+    color: var(--rose-50);
+    cursor: auto;
+  }
+}
+
+.product__button {
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--rose-50);
+  background-color: transparent;
+  @include centered-flex();
+  color: var(--rose-50);
+  cursor: pointer;
+  @include custom-transition(color);
+  @include custom-transition(border-color);
+  &:hover {
+    background-color: var(--rose-50);
+    color: var(--red);
+    fill: var(--red);
+  }
+}
+
+.product-list__category {
+  @include fonts(14, 500);
+  font-size: 12px;
+  color: var(--rose-500);
+  margin-bottom: 14px;
+}
+.product-list__name {
+  @include fonts(15, 700);
+  color: var(--rose-900);
+  margin-bottom: 14px;
+}
+.product-list__price {
+  @include fonts(18, 400);
+  color: var(--red);
+}
+
+.cart__list {
+  margin-bottom: 35px;
+}

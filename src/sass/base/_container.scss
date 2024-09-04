@@ -1,19 +1,15 @@
-.container {
-  width: 100%;
+.section__container {
+  width: 375px;
   padding-left: 20px;
   padding-right: 20px;
   margin-left: auto;
   margin-right: auto;
 
-  @include mq(tab) {
-    width: 768px;
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-
   @include mq(desk) {
-    width: 1280px;
-    padding-left: 32px;
-    padding-right: 32px;
+    width: 1440px;
+    padding-left: 110px;
+    padding-right: 110px;
+    padding-top: 100px;
+    padding-bottom: 90px;
   }
 }

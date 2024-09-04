@@ -3,8 +3,16 @@
 @import './utils/variables';
 @import './utils/mixins';
 @import './utils/visually-hidden';
+@import './utils/animation';
 
 // Base
 @import './base/body-settings';
 @import './base/reset-styles';
+@import './base/section';
 @import './base/container';
+
+// Components
+@import './components/button';
+@import './components/product-list';
+@import './components/cart-list';
+@import './components/modal-window';
