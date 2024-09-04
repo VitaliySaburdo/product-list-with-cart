@@ -1,13 +1,13 @@
 {
-  "name": "vite_vanilla_js_template",
+"name": "product-list-with-cart",
   "private": true,
   "version": "1.0.0",
-  "description": "",
-  "homepage": "https://",
+  "description": "list project that includes a functional cart",
+  "homepage": "https://product-list-with-cart-two.vercel.app/",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/VitaliySaburdo/vite_vanilla_js_template"
+    "url": "https://github.com/VitaliySaburdo/Product-list-with-cart"
   },
   "author": "Saburdo Vitaliy",
   "scripts": {
