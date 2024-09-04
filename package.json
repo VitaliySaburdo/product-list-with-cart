@@ -11,7 +11,7 @@
   },
   "author": "Saburdo Vitaliy",
   "scripts": {
-    "start": "vite --port 8080 --open",
+    "dev": "vite --open --port 8080",
     "build": "vite build",
     "preview": "vite preview"
   },
